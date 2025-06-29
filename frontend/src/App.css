@@ -1,0 +1,151 @@
+/* reset.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+ ul,ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, textarea, select {
+  font: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 50px
+}
+
+#tasks-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid burlywood;
+  padding: 30px;
+}
+
+.todo-item{
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+  max-width: 400px;
+  margin: 10px;
+  border: 0.5px solid burlywood;
+  justify-content: space-between;
+}
+
+.todo-text{
+  max-width: 300px;
+}
+
+#add-task {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+#add-task input {
+  background-color: burlywood;
+  margin: 2px;
+  padding: 5px;
+  color: black;
+  width: 100%
+}
+
+#add-task input::placeholder {
+  color: black;
+}
+
+#add-task input[type="submit"],
+.edit-todo input {
+  background-color: rgb(206, 135, 222);
+  margin: 2px;
+  padding: 2px;
+  color: black;
+}
+
+.edit-icon{
+  margin-right: 10px;
+ color: rgb(206, 135, 222);
+}
+
+.delete-icon{
+  color: #000000
+}
+
+
+.todo-modification-icon{
+ cursor: pointer;
+}
+
+.td-bg-low {
+  background-color: #007bff;
+}
+
+.td-bg-high {
+  background-color: #dc3545;
+}
+
+.td-bg-medium {
+  background-color: #ffc107;
+}
+
+select{
+  color: burlywood;
+  padding: 5px;
+  border: 1px solid burlywood;
+  margin: 5px
+}
+
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"]{
+  background-color: burlywood;
+  padding: 5px
+}
+
+.auth-form input[type="submit"]{
+  background-color: blueviolet;
+  color: white
+}
+
+#signin-link, #signup-link{
+  color: blueviolet;
+  text-decoration: underline;
+  cursor: pointer;
+}
