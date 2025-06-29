@@ -8,6 +8,8 @@ function Signup() {
     const [signUp, setSignUp] = useState(true)
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
+    const [signInEmail, setSignInEmail] = useState('')
+    const [signInPassword, setSignInPassword] = useState('')
     const [password, setPassword] = useState('')
     const [localStorageIsSet, setLocalStorageIsSet] = useState(false)
 
@@ -36,29 +38,33 @@ function Signup() {
                     <form onSubmit={
                         (e)=>signupHandler(e, username, email, password, setSignUp)}
                          className="auth-form" action="">
+                            <label htmlFor="username">Username</label>
                         <input type="text" 
                         onChange={(e) => setUsername(e.target.value)}
                         placeholder="username" />
+                        <label htmlFor="email">Email</label>
                         <input
                         onChange={(e) => setEmail(e.target.value)}
                          type="email" placeholder="email" />
-
+                        <label htmlFor="password">Password</label>
                         <input
                         onChange={(e) => setPassword(e.target.value)}
-                        type="password" />
+                        type="password" placeholder="password" />
                         <input type="submit" value="Signup" />
                     </form>
                     <p>Already have an account?
                         <span onClick={signinLinkHandler} id="signin-link"> Sign in</span></p>
                 </div>
                 :
-                <div><form onSubmit={(e)=> signinHandler(e, email, password, setSignUp, setLocalStorageIsSet)} className="auth-form" action="">
+                <div><form onSubmit={(e)=> signinHandler(e, signInEmail, signInPassword, setSignUp, setLocalStorageIsSet)} className="auth-form" action="">
+                    <label htmlFor="email">Email</label>
                     <input
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => setSignInEmail(e.target.value)}
                     type="text" placeholder="email" />
+                    <label htmlFor="password">Password</label>
                     <input
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password" placeholder="" />
+                    onChange={(e) => setSignInPassword(e.target.value)}
+                    type="password" placeholder="password" />
                     <input type="submit" value="Signin" />
                 </form>
                     <p>Don't have an account?

@@ -27,9 +27,11 @@ function AddTodo() {
     <>
     <h3>Add New Todo</h3>
       <form id="add-task" onSubmit={handleSubmit}>
+        <label htmlFor="task">Todo Title</label>
         <input type="text" placeholder="Add new task" />
+        <label htmlFor="due-date">Due Date</label>
         <input type="date" />
-
+        <label htmlFor="priority">Todo Priority</label>
         <select name="priority" id="priority">
         <option value="low">Low Priority</option>
         <option value="medium">Medium Priority</option>

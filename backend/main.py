@@ -49,6 +49,8 @@ def create_user(user: UserSchema):
     user = user.dict()
     user['todos'] = [
         {"id": 1, "task": "Welcome to your Todo List!", "due": '2025-07-01', 'priority': 'low' },
+        {"id": 2, "task": "This is a sample medium priority todo!", "due": '2025-06-30', 'priority': 'medium' },
+        {"id": 2, "task": "This is a sample High priority todo!", "due": '2025-06-30', 'priority': 'high' },
     ]
     users.append(user)
     return user
@@ -65,7 +67,7 @@ def sign_in(user: UserSignInSchema):
                     'email': user.email,
                     "username": u['username']}
     raise ValueError("Invalid email or password")
-# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RfbmFzaXIiLCJlbWFpbCI6InNwYXRpYWxuYXNpckBnbWFpbC5jb20ifQ.vzc0kNf7ui_9OgU28T8ELr0Lkt_Sw6yHX8D5hMu6q1I
+
 @app.get("/todos", response_model=list[TodoResponseSchema])
 def read_root(token: str = None):
     if token:
